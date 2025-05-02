@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3897654710143468405}
   - component: {fileID: 3224063153606422215}
   - component: {fileID: 3511624899006009396}
+  - component: {fileID: 2847101020513149324}
   m_Layer: 0
   m_Name: Bala_redonda
   m_TagString: Untagged
@@ -162,3 +163,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7389033, y: 0.7389028}
   m_EdgeRadius: 0
+--- !u!114 &2847101020513149324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144923671455103360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56422a3e8c3fa744d853810034e762e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
