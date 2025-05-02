@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: d4126fdddd95a544b85f1fdf859dabd3, type: 3}
       propertyPath: m_Name
-      value: arrastrado_final
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -7809904576720337003, guid: d4126fdddd95a544b85f1fdf859dabd3, type: 3}
       propertyPath: m_SortingLayer
@@ -97,6 +97,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: d4126fdddd95a544b85f1fdf859dabd3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4554612031101149056}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: d4126fdddd95a544b85f1fdf859dabd3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 802494916042620625}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: d4126fdddd95a544b85f1fdf859dabd3, type: 3}
 --- !u!1 &5271560671028037169 stripped
 GameObject:
@@ -118,7 +121,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -198,3 +201,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &802494916042620625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271560671028037169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663ac48ba71caf4479bf65ff7aa174db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
