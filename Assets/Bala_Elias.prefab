@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 312866341893305499}
   - component: {fileID: 7400512473775884129}
   - component: {fileID: 1954431330193222180}
+  - component: {fileID: 8944685835721416799}
   m_Layer: 0
   m_Name: Bala_Elias
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1379336243
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -3337038689812066966, guid: 44025829d7e8b034695c9299591488a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,9 +113,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1954431330193222180
 BoxCollider2D:
@@ -162,3 +163,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.33}
   m_EdgeRadius: 0
+--- !u!114 &8944685835721416799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534476626986019484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01cb7d0d7514944ca7178935892c3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

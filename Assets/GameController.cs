@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class GameController : MonoBehaviour
     public float minSpeed = 3f;
     public float maxSpeed = 8f;
     public int maxEnemies = 5;
+    public GameObject gameOverCanvas;
 
     private int enemyCount = 0;
 
     void Start()
     {
         InvokeRepeating(nameof(SpawnEnemy), 1f, spawnInterval);
+        gameOverCanvas.SetActive(false);
     }
 
     void SpawnEnemy()
@@ -38,4 +41,16 @@ public class GameController : MonoBehaviour
 
         enemyCount++;
     }
+    public void GameOver()
+    {
+        gameOverCanvas.SetActive(true); 
+        Time.timeScale = 0f;
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

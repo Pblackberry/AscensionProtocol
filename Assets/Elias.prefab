@@ -418,6 +418,8 @@ MonoBehaviour:
   mainCamera: {fileID: 3781095387040379894, guid: 588f97a2260c7c447bd15e73ece57a9b, type: 3}
   velocidadBala: 100
   tieneArma: 0
+  armaEquipada: {fileID: 0}
+  armaPrefab: {fileID: 0}
 --- !u!1 &6749087447900864859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4891915868413900037, guid: 36754b5535f25804eaee8b3444fa8f31, type: 3}
