@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class BalaElias : MonoBehaviour
 {
+    public int damage = 1;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            
-            GameController gameController = Object.FindFirstObjectByType<GameController>(); // Usando la nueva función
-            if (gameController != null)
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
             {
-                gameController.GameOver();  
+                player.TakeDamage(damage);
             }
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+
+            Destroy(gameObject); // Destruye solo la bala, no al jugador
         }
     }
 }

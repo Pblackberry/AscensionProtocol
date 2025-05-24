@@ -1,15 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D rb;
     private Animator animator;
+    public int maxHealth = 5;
+    private int currentHealth;
+    public Slider vidaSlider;
+
+    public GameObject gameOverScreen;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+
+        if (vidaSlider != null)
+        {
+            vidaSlider.maxValue = maxHealth;
+            vidaSlider.value = currentHealth;
+        }
+
     }
 
     void Update()
@@ -23,17 +37,32 @@ public class PlayerController : MonoBehaviour
 
         bool isWalking = moveDirection.magnitude > 0;
         animator.SetBool("isWalking", isWalking);
+    }
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        Debug.Log("Vida restante: " + currentHealth);
 
-        // Voltear al personaje dependiendo de la dirección en X
-        // if (moveX < 0)
-        // {
-        //     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        // }
-        // else if (moveX > 0)
-        // {
-        //     transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        // }
-        // Si moveX == 0, no cambia la escala (se mantiene como estaba)
+        if (vidaSlider != null)
+        {
+            vidaSlider.value = currentHealth;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Jugador ha muerto");
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true);
+            Time.timeScale = 0f;
+            vidaSlider.gameObject.SetActive(false);
+        }
     }
 }
 
