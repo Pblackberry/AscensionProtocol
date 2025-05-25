@@ -11,5 +11,9 @@ public class Bala : MonoBehaviour
             Destroy(other.transform.root.gameObject);
             Destroy(gameObject);       // Elimina la bala también
         }
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

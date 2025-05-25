@@ -16,5 +16,9 @@ public class BalaElias : MonoBehaviour
 
             Destroy(gameObject); // Destruye solo la bala, no al jugador
         }
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
