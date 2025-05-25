@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PickupWeapon : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class PickupWeapon : MonoBehaviour
     private bool jugadorCerca = false;
     private Transform puntoDisparo;
     public Transform characterTransform;
+    public Light2D luz2D;
 
     void Update()
     {
@@ -51,6 +53,7 @@ public class PickupWeapon : MonoBehaviour
                     Debug.LogWarning("⚠️ No se encontró el script Disparo en el jugador.");
                 }
             }
+            luz2D.enabled = false;
         }
     }
 
