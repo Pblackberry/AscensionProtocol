@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -10,7 +11,10 @@ public class GameController : MonoBehaviour
     public float maxSpeed = 8f;
     public int maxEnemies = 5;
     public GameObject gameOverCanvas;
+    private List<GameObject> enemigosActivos = new List<GameObject>();
     public GameObject puertaDeTransicion;
+    public ParticleSystem efectoExplosion;
+    public GameObject puertaDoor;
 
     private int enemyCount = 0;
     private int enemigosVivos = 0;
@@ -46,23 +50,35 @@ public class GameController : MonoBehaviour
         }
 
         enemyCount++;
-        enemigosVivos++;
+        enemigosActivos.Add(newEnemy);
     }
 
-    public void NotificarMuerteEnemigo()
+    public void NotificarMuerteEnemigo(GameObject enemigo)
     {
-        enemigosVivos--;
+        if (enemigosActivos.Contains(enemigo))
+        {
+            enemigosActivos.Remove(enemigo);
+        }
 
         VerificarPuerta();
     }
 
+
     private void VerificarPuerta()
     {
-        if (enemigosVivos <= 0 && enemyCount >= maxEnemies)
+        if (enemigosActivos.Count == 0 && enemyCount >= maxEnemies)
         {
             if (puertaDeTransicion != null)
             {
                 puertaDeTransicion.SetActive(true);
+            }
+            if (efectoExplosion != null)
+            {
+                Instantiate(efectoExplosion, puertaDoor.transform.position, Quaternion.identity);
+            }
+            if (puertaDoor != null)
+            {
+                Destroy(puertaDoor);
             }
         }
     }

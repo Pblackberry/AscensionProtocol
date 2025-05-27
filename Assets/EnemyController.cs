@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     {
         if (gameController != null)
         {
-            gameController.NotificarMuerteEnemigo();
+            gameController.NotificarMuerteEnemigo(gameObject);
         }
     }
 }
