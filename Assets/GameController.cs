@@ -10,13 +10,19 @@ public class GameController : MonoBehaviour
     public float maxSpeed = 8f;
     public int maxEnemies = 5;
     public GameObject gameOverCanvas;
+    public GameObject puertaDeTransicion;
 
     private int enemyCount = 0;
+    private int enemigosVivos = 0;
 
     void Start()
     {
         InvokeRepeating(nameof(SpawnEnemy), 1f, spawnInterval);
         gameOverCanvas.SetActive(false);
+        if (puertaDeTransicion != null)
+        {
+            puertaDeTransicion.SetActive(false); // Desactiva la puerta al inicio
+        }
     }
 
     void SpawnEnemy()
@@ -35,22 +41,41 @@ public class GameController : MonoBehaviour
         EnemyController enemyScript = newEnemy.GetComponent<EnemyController>();
         if (enemyScript != null)
         {
-            // ✅ Le asignamos una velocidad aleatoria diferente
             enemyScript.speed = Random.Range(minSpeed, maxSpeed);
+            enemyScript.SetGameController(this); // Asigna referencia a este GameController
         }
 
         enemyCount++;
+        enemigosVivos++;
     }
+
+    public void NotificarMuerteEnemigo()
+    {
+        enemigosVivos--;
+
+        VerificarPuerta();
+    }
+
+    private void VerificarPuerta()
+    {
+        if (enemigosVivos <= 0 && enemyCount >= maxEnemies)
+        {
+            if (puertaDeTransicion != null)
+            {
+                puertaDeTransicion.SetActive(true);
+            }
+        }
+    }
+
     public void GameOver()
     {
-        gameOverCanvas.SetActive(true); 
+        gameOverCanvas.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void RestartGame()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
 }

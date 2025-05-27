@@ -6,6 +6,12 @@ public class EnemyController : MonoBehaviour
     public Transform visual; // Asigna aquí el objeto hijo "Visual"
 
     private Transform player;
+    private GameController gameController; // Referencia al GameController
+
+    public void SetGameController(GameController controller)
+    {
+        gameController = controller;
+    }
 
     void Start()
     {
@@ -15,7 +21,6 @@ public class EnemyController : MonoBehaviour
             player = playerObj.transform;
         }
     }
-
     void Update()
     {
         if (player == null) return;
@@ -29,12 +34,19 @@ public class EnemyController : MonoBehaviour
         {
             if (player.position.x < transform.position.x)
             {
-                visual.localScale = new Vector3(1, 1, 1); // Ahora mirar a la izquierda
+                visual.localScale = new Vector3(1, 1, 1); // Mirar a la izquierda
             }
             else
             {
-                visual.localScale = new Vector3(-1, 1, 1); // Ahora mirar a la derecha
+                visual.localScale = new Vector3(-1, 1, 1); // Mirar a la derecha
             }
+        }
+    }
+    void OnDestroy()
+    {
+        if (gameController != null)
+        {
+            gameController.NotificarMuerteEnemigo();
         }
     }
 }
