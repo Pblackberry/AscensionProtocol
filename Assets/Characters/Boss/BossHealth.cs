@@ -8,6 +8,7 @@ public class BossHealth : MonoBehaviour
 
     public GameObject healthBarUI; // Asigna el panel que contiene la barra
     public Slider healthSlider;    // Asigna la barra
+    public GameObject deathEffectPrefab; //Efecto muerte
 
     void Start()
     {
@@ -37,6 +38,10 @@ public class BossHealth : MonoBehaviour
     private void Die()
     {
         // Aquí puedes poner animación de muerte, etc.
+        if (deathEffectPrefab != null)
+        {
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
         if (healthBarUI != null) healthBarUI.SetActive(false);
     }
