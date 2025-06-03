@@ -13,7 +13,7 @@ public class BossHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        if (healthBarUI != null) healthBarUI.SetActive(false);
+        //if (healthBarUI != null) healthBarUI.SetActive(false);
     }
 
     public void ActivateHealthBar()

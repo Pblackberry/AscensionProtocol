@@ -1,11 +1,11 @@
-using UnityEngine;
-using Unity.Cinemachine; // o Cinemachine seg�n tu versi�n
+﻿using UnityEngine;
+using Unity.Cinemachine; // Usa el namespace correcto según tu versión
 
 public class PortalANivel2 : MonoBehaviour
 {
     public Transform puntoDestino;
     public Collider2D nuevoConfiner;
-    public CinemachineCamera cam; // Asignar desde el Inspector
+    public CinemachineCamera cam; // Asignar la cámara Cinemachine desde el Inspector
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,20 +14,22 @@ public class PortalANivel2 : MonoBehaviour
             // Mover al jugador al punto destino
             other.transform.position = puntoDestino.position;
 
-            // Cambiar el �rea de confinamiento de la c�mara
+            // Cambiar el área de confinamiento de la cámara
             var confiner = cam.GetComponent<CinemachineConfiner2D>();
             confiner.BoundingShape2D = nuevoConfiner;
 
-            // Buscar al jefe
-            GameObject boss = GameObject.Find("boss_prueba");
-            if (boss != null)
+            // ✅ Reiniciar el componente para que actualice los límites
+            confiner.enabled = false;
+            confiner.enabled = true;
+
+            //Borrar los enemigos
+            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach (GameObject enemigo in enemigos)
             {
-                BossHealth bossHealth = boss.GetComponent<BossHealth>();
-                if (bossHealth != null)
-                {
-                    bossHealth.ActivateHealthBar();
-                }
+                Destroy(enemigo);
             }
+
         }
     }
 }
