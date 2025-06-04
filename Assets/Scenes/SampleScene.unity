@@ -1388,7 +1388,7 @@ Transform:
   m_GameObject: {fileID: 255644925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.700012, y: -59.6, z: -0.5979641}
+  m_LocalPosition: {x: -79.5, y: -59.6, z: -0.5979641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2246,6 +2246,54 @@ Transform:
   - {fileID: 957743977}
   m_Father: {fileID: 1958364137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &404052686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404052687}
+  - component: {fileID: 404052688}
+  m_Layer: 0
+  m_Name: SPE (5)
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404052687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404052686}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.9, y: 51, z: -0.5979641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1543280193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404052688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404052686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e9e5eb712ba0647adb1a82672a3f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grupoDeSpawn: Cuarto2
+  enemyPrefab: {fileID: 83335353474966030, guid: 563565dca9b040a4d927a66b83e53542, type: 3}
+  spawnInterval: 2
+  maxEnemies: 4
 --- !u!1 &413042236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3263,7 @@ Transform:
   m_GameObject: {fileID: 532459711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -122.100006, y: -59.6, z: -0.5979641}
+  m_LocalPosition: {x: -148.90001, y: -59.6, z: -0.5979641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12506,7 +12554,7 @@ Transform:
   m_GameObject: {fileID: 740905717}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -120, y: 51, z: -0.5979641}
+  m_LocalPosition: {x: -146.8, y: 51, z: -0.5979641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13166,7 +13214,7 @@ GameObject:
   - component: {fileID: 951635034}
   - component: {fileID: 951635035}
   m_Layer: 0
-  m_Name: SPE (4)
+  m_Name: SPE 7
   m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15555,6 +15603,8 @@ Transform:
   - {fileID: 532459712}
   - {fileID: 1653439110}
   - {fileID: 255644926}
+  - {fileID: 404052687}
+  - {fileID: 2027057227}
   - {fileID: 951635034}
   m_Father: {fileID: 1713825263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15912,7 +15962,7 @@ Transform:
   m_GameObject: {fileID: 1653439109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.600006, y: 51, z: -0.5979641}
+  m_LocalPosition: {x: -77.40001, y: 51, z: -0.5979641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15933,7 +15983,7 @@ MonoBehaviour:
   grupoDeSpawn: Cuarto2
   enemyPrefab: {fileID: 83335353474966030, guid: 563565dca9b040a4d927a66b83e53542, type: 3}
   spawnInterval: 2
-  maxEnemies: 5
+  maxEnemies: 4
 --- !u!1001 &1655774378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17451,6 +17501,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4373521331264751942, guid: 822866ad431ad0c4fb03936f4ff60253, type: 3}
   m_PrefabInstance: {fileID: 37653305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2027057226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027057227}
+  - component: {fileID: 2027057228}
+  m_Layer: 0
+  m_Name: SPE (6)
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027057227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027057226}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.99997, y: -59.6, z: -0.5979641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1543280193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027057228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027057226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e9e5eb712ba0647adb1a82672a3f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grupoDeSpawn: Cuarto2
+  enemyPrefab: {fileID: 83335353474966030, guid: 563565dca9b040a4d927a66b83e53542, type: 3}
+  spawnInterval: 2
+  maxEnemies: 4
 --- !u!4 &2027168354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373521331264751942, guid: 822866ad431ad0c4fb03936f4ff60253, type: 3}
@@ -18071,7 +18169,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 8629849732148700310, guid: 4422b011a839e194f9622e86af699ea2, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8629849732148700310, guid: 4422b011a839e194f9622e86af699ea2, type: 3}
       propertyPath: vidaSlider
